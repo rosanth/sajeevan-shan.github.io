@@ -127,17 +127,37 @@ section h2 {
   color: #007bff;
 }
 
-/* Contact Section */
+/* Contact section */
+#contact {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 12px;
+  margin: 60px auto 20px;
+  max-width: 800px;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
 
 #contact a {
   margin-right: 15px;
   text-decoration: none;
   color: #0077b6;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+#contact a:hover {
+  color: #023e8a;
 }
 
 #contact i {
   margin-right: 5px;
 }
+
 
 /* Footer */
 footer {
