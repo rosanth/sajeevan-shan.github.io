@@ -1,114 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sajeevan Jeyakumar | ML Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sajeevan Jeyakumar | Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
-  <header data-aos="fade-down">
-    <h1>Sajeevan Jeyakumar</h1>
-    <p>ML Engineer | AI Enthusiast</p>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>I'm Sajeevan, a Machine Learning Engineer passionate about building intelligent systems and impactful applications. I work with Python, Java, and ML frameworks like TensorFlow and Scikit-Learn.</p>
-  </section>
-
-  <section id="projects" data-aos="fade-up">
-    <h2>Projects</h2>
-    <div class="project-gallery">
-      <div class="project-card" data-aos="fade-left">
-        <h3>Smart Retail Analytics</h3>
-        <p>A dashboard that predicts customer purchase patterns using ML.</p>
-        <a href="https://github.com/your-username/smart-retail-analytics" target="_blank">GitHub Repo</a>
-      </div>
-      <div class="project-card" data-aos="fade-left">
-        <h3>ChatBot for Business</h3>
-        <p>An NLP chatbot built with Python and Flask to answer customer queries.</p>
-        <a href="https://github.com/your-username/chatbot-project" target="_blank">GitHub Repo</a>
-      </div>
-      <div class="project-card" data-aos="fade-left">
-        <h3>Stock Price Predictor</h3>
-        <p>Time series analysis and forecasting using LSTM models.</p>
-        <a href="https://github.com/your-username/stock-price-predictor" target="_blank">GitHub Repo</a>
-      </div>
-      <div class="project-card" data-aos="fade-left">
-        <h3>Resume Ranker</h3>
-        <p>Ranks job resumes based on skill relevance using NLP techniques.</p>
-        <a href="https://github.com/your-username/resume-ranker" target="_blank">GitHub Repo</a>
-      </div>
-      <div class="project-card" data-aos="fade-left">
-        <h3>Resume Ranker</h3>
-        <p>Ranks job resumes based on skill relevance using NLP techniques.</p>
-        <a href="https://github.com/your-username/resume-ranker" target="_blank">GitHub Repo</a>
-      </div>
-    </div>
-  </section>
 
   <section id="certifications">
-  <h2>Certifications</h2>
-  <div class="certification-carousel">
-    <div class="certification-track">
+    <h2>Certifications</h2>
+    <div class="certification-grid" id="certGrid">
+      <!-- Card 1 -->
       <div class="certification-card">
-        <img src="cert1.jpg" alt="ML Specialization" />
-        <h3>Machine Learning</h3>
-        <p>DeepLearning.AI – Specialization</p>
+        <img src="cert1.jpg" alt="Machine Learning">
+        <div class="cert-content">
+          <span class="cert-provider">DeepLearning.AI</span>
+          <h3>Machine Learning</h3>
+          <span class="cert-type">Specialization</span>
+        </div>
       </div>
+
+      <!-- Card 2 -->
       <div class="certification-card">
-        <img src="cert2.jpg" alt="Blender" />
-        <h3>3D Modelling in Blender</h3>
-        <p>Packt – Course</p>
+        <img src="cert2.jpg" alt="3D Modelling">
+        <div class="cert-content">
+          <span class="cert-provider">Packt</span>
+          <h3>Foundations of 3D Modelling in Blender</h3>
+          <span class="cert-type">Course</span>
+        </div>
       </div>
+
+      <!-- Card 3 -->
       <div class="certification-card">
-        <img src="cert3.jpg" alt="UMich" />
-        <h3>Intro to 3D Modeling</h3>
-        <p>University of Michigan – Course</p>
+        <img src="cert3.jpg" alt="3D Intro">
+        <div class="cert-content">
+          <span class="cert-provider">University of Michigan</span>
+          <h3>Introduction to 3D Modeling</h3>
+          <span class="cert-type">Course</span>
+        </div>
       </div>
+
+      <!-- Card 4 -->
       <div class="certification-card">
-        <img src="cert4.jpg" alt="Power BI" />
-        <h3>Power BI Data Analyst</h3>
-        <p>Microsoft – Certificate</p>
+        <img src="cert4.jpg" alt="Power BI">
+        <div class="cert-content">
+          <span class="cert-provider">Microsoft</span>
+          <h3>Microsoft Power BI Data Analyst</h3>
+          <span class="cert-type">Professional Certificate</span>
+        </div>
       </div>
-      <!-- Add more cards as needed -->
+
+      <!-- More cards can be added here -->
+
     </div>
-  </div>
-  <button id="nextCerts">Show 4 more</button>
-</section>
 
-
-  <section id="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:sajeevan@example.com">sajeevan@example.com</a></p>
-    <p>
-      <a href="https://github.com/your-username"><i class="fab fa-github"></i> GitHub</a> |
-      <a href="https://linkedin.com/in/your-username"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    </p>
+    <button id="showMore">Show 6 more</button>
   </section>
 
-  <footer data-aos="fade-in">
-    <p>&copy; 2025 Sajeevan Jeyakumar</p>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
+    document.getElementById("showMore").addEventListener("click", () => {
+      alert("You can add JS to load more cards or navigate to a new page.");
     });
   </script>
+
 </body>
 </html>
