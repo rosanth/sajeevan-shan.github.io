@@ -6,9 +6,10 @@
   <title>Sajeevan Jeyakumar | ML Engineer</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
-  <header>
+  <header data-aos="fade-down">
     <h1>Sajeevan Jeyakumar</h1>
     <p>ML Engineer | AI Enthusiast</p>
     <nav>
@@ -21,12 +22,12 @@
     </nav>
   </header>
 
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>I'm Sajeevan, a Machine Learning Engineer passionate about building intelligent systems and impactful applications. I work with Python, Java, and ML frameworks like TensorFlow and Scikit-Learn.</p>
   </section>
 
-  <section id="projects">
+  <section id="projects" data-aos="zoom-in-up">
     <h2>Projects</h2>
     <div class="project">
       <h3>Smart Retail Analytics</h3>
@@ -40,7 +41,7 @@
     </div>
   </section>
 
-  <section id="certifications">
+  <section id="certifications" data-aos="fade-up">
     <h2>Certifications</h2>
     <ul>
       <li>Python for Everybody - Coursera</li>
@@ -49,7 +50,7 @@
     </ul>
   </section>
 
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:sajeevan@example.com">sajeevan@example.com</a></p>
     <p>
@@ -58,8 +59,17 @@
     </p>
   </section>
 
-  <footer>
+  <footer data-aos="fade-in">
     <p>&copy; 2025 Sajeevan Jeyakumar</p>
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+    });
+  </script>
 </body>
 </html>
