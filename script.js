@@ -197,8 +197,16 @@ footer {
   color: #bbb;
 }
 .cert-link {
-  font-size: 0.75rem;
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.8rem;
   color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cert-link:hover {
+  color: #0056b3;
 }
 
 
