@@ -199,9 +199,8 @@ footer {
 a.cert-link {
   display: inline-block;
   margin-top: 6px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #007bff !important;
-  text-decoration: underline !important;
   cursor: pointer;
 }
 
