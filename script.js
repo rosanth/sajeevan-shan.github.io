@@ -128,22 +128,15 @@ section h2 {
 }
 
 /* Contact Section */
-.contact {
-  text-align: center;
-  padding: 40px 20px;
-  background: #fff;
-  border-radius: 12px;
-  margin: 60px auto 20px;
-  max-width: 800px;
+
+#contact a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #0077b6;
 }
 
-.contact h2 {
-  margin-bottom: 16px;
-}
-
-.contact p {
-  color: #444;
-  font-size: 1rem;
+#contact i {
+  margin-right: 5px;
 }
 
 /* Footer */
