@@ -196,17 +196,17 @@ footer {
 .close:hover {
   color: #bbb;
 }
-.cert-link {
+a.cert-link {
   display: inline-block;
   margin-top: 6px;
-  font-size: 0.8rem;
-  color: #007bff;
-  text-decoration: underline;
+  font-size: 0.85rem;
+  color: #007bff !important;
+  text-decoration: underline !important;
   cursor: pointer;
 }
 
-.cert-link:hover {
-  color: #0056b3;
+a.cert-link:hover {
+  color: #0056b3 !important;
 }
 
 
