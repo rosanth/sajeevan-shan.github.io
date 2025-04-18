@@ -1,87 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sajeevan Jeyakumar | ML Engineer</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-</head>
-<body>
-  <header data-aos="fade-down">
-    <h1>Sajeevan Jeyakumar</h1>
-    <p>ML Engineer | AI Enthusiast</p>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>I'm Sajeevan, a Machine Learning Engineer passionate about building intelligent systems and impactful applications. I work with Python, Java, and ML frameworks like TensorFlow and Scikit-Learn.</p>
-  </section>
-
-  <section id="projects" data-aos="fade-up">
-    <h2>Projects</h2>
-    <div class="project-gallery">
-      <div class="project-card" data-aos="fade-left">
-        <h3>Smart Retail Analytics</h3>
-        <p>A dashboard that predicts customer purchase patterns using ML.</p>
-        <a href="https://github.com/your-username/smart-retail-analytics" target="_blank">GitHub Repo</a>
+<section id="learning-journey" data-aos="fade-up">
+  <h2>My Learning Journey</h2>
+  
+  <!-- Learning Process with Progress Bars -->
+  <div class="learning-container">
+    <div class="learning-item">
+      <h3>Machine Learning Basics</h3>
+      <div class="progress-bar">
+        <div class="progress" style="width: 60%;"></div>
       </div>
-      <div class="project-card" data-aos="fade-left">
-        <h3>ChatBot for Business</h3>
-        <p>An NLP chatbot built with Python and Flask to answer customer queries.</p>
-        <a href="https://github.com/your-username/chatbot-project" target="_blank">GitHub Repo</a>
-      </div>
-      <div class="project-card" data-aos="fade-left">
-        <h3>Stock Price Predictor</h3>
-        <p>Time series analysis and forecasting using LSTM models.</p>
-        <a href="https://github.com/your-username/stock-price-predictor" target="_blank">GitHub Repo</a>
-      </div>
-      <div class="project-card" data-aos="fade-left">
-        <h3>Resume Ranker</h3>
-        <p>Ranks job resumes based on skill relevance using NLP techniques.</p>
-        <a href="https://github.com/your-username/resume-ranker" target="_blank">GitHub Repo</a>
-      </div>
+      <p>Learning about supervised learning, unsupervised learning, and model evaluation metrics. Currently 60% through this topic.</p>
     </div>
-  </section>
 
-  <section id="certifications" data-aos="fade-up">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Python for Everybody - Coursera</li>
-      <li>Machine Learning - Stanford (Andrew Ng)</li>
-      <li>Python Data Structures - Coursera</li>
-    </ul>
-  </section>
+    <div class="learning-item">
+      <h3>Deep Learning (TensorFlow & Keras)</h3>
+      <div class="progress-bar">
+        <div class="progress" style="width: 40%;"></div>
+      </div>
+      <p>Exploring deep learning concepts like CNNs, RNNs, and creating neural networks. 40% completed.</p>
+    </div>
 
-  <section id="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:sajeevan@example.com">sajeevan@example.com</a></p>
-    <p>
-      <a href="https://github.com/your-username"><i class="fab fa-github"></i> GitHub</a> |
-      <a href="https://linkedin.com/in/your-username"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    </p>
-  </section>
+    <div class="learning-item">
+      <h3>Natural Language Processing</h3>
+      <div class="progress-bar">
+        <div class="progress" style="width: 30%;"></div>
+      </div>
+      <p>Diving into NLP tasks such as text classification, named entity recognition, and language models. Currently 30% completed.</p>
+    </div>
+  </div>
 
-  <footer data-aos="fade-in">
-    <p>&copy; 2025 Sajeevan Jeyakumar</p>
-  </footer>
+  <!-- Posts Section -->
+  <h3>Learning Posts</h3>
+  <div class="posts">
+    <div class="post">
+      <h4>Understanding Linear Regression</h4>
+      <p>Linear regression is one of the simplest algorithms in machine learning. Today, I experimented with building a linear regression model to predict housing prices...</p>
+    </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-    });
-  </script>
-</body>
-</html>
+    <div class="post">
+      <h4>Implementing Convolutional Neural Networks (CNN)</h4>
+      <p>Today I built a simple CNN model using TensorFlow to classify handwritten digits from the MNIST dataset. The accuracy was around 98%...</p>
+    </div>
+  </div>
+</section>
