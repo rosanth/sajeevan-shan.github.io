@@ -1,68 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sajeevan Jeyakumar | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <div class="certification-grid" id="certGrid">
-      <!-- Card 1 -->
-      <div class="certification-card">
-        <img src="cert1.jpg" alt="Machine Learning">
-        <div class="cert-content">
-          <span class="cert-provider">DeepLearning.AI</span>
-          <h3>Machine Learning</h3>
-          <span class="cert-type">Specialization</span>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="certification-card">
-        <img src="cert2.jpg" alt="3D Modelling">
-        <div class="cert-content">
-          <span class="cert-provider">Packt</span>
-          <h3>Foundations of 3D Modelling in Blender</h3>
-          <span class="cert-type">Course</span>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="certification-card">
-        <img src="cert3.jpg" alt="3D Intro">
-        <div class="cert-content">
-          <span class="cert-provider">University of Michigan</span>
-          <h3>Introduction to 3D Modeling</h3>
-          <span class="cert-type">Course</span>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="certification-card">
-        <img src="cert4.jpg" alt="Power BI">
-        <div class="cert-content">
-          <span class="cert-provider">Microsoft</span>
-          <h3>Microsoft Power BI Data Analyst</h3>
-          <span class="cert-type">Professional Certificate</span>
-        </div>
-      </div>
-
-      <!-- More cards can be added here -->
-
-    </div>
-
-    <button id="showMore">Show 6 more</button>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Sajeevan Jeyakumar</h1>
+    <p>Machine Learning Engineer</p>
   </section>
 
-  <script>
-    document.getElementById("showMore").addEventListener("click", () => {
-      alert("You can add JS to load more cards or navigate to a new page.");
-    });
-  </script>
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a passionate ML Engineer with hands-on experience in developing intelligent solutions. Skilled in Python, data science, and building models that power decision-making.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="slider-container">
+      <div class="card-slider">
+
+        <!-- Project 1 -->
+        <div class="certification-card">
+          <img src="project1.jpg" alt="Project 1" />
+          <div class="cert-content">
+            <span class="cert-provider">Personal Project</span>
+            <h3>ML Dashboard</h3>
+            <span class="cert-type">Prediction + Recommender</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="certification-card">
+          <img src="project2.jpg" alt="Project 2" />
+          <div class="cert-content">
+            <span class="cert-provider">Team Project</span>
+            <h3>Beauty Parlor App</h3>
+            <span class="cert-type">Scheduler + Bookkeeping</span>
+          </div>
+        </div>
+
+        <!-- Add more projects here -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="slider-container">
+      <div class="card-slider">
+
+        <!-- Card 1 -->
+        <div class="certification-card">
+          <img src="cert1.jpg" alt="Machine Learning" />
+          <div class="cert-content">
+            <span class="cert-provider">DeepLearning.AI</span>
+            <h3>Machine Learning</h3>
+            <span class="cert-type">Specialization</span>
+          </div>
+        </div>
+
+        <!-- Add more certifications like before -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:sajeevan@example.com">sajeevan@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/sajeevan">github.com/sajeevan</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/sajeevan">linkedin.com/in/sajeevan</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sajeevan Jeyakumar. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
