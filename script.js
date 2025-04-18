@@ -1,4 +1,4 @@
-/* Reset and Base */
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,88 +7,149 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f4f6f8;
-  padding: 40px 20px;
+  background-color: #f4f6f8;
   color: #222;
+  line-height: 1.6;
+  padding: 0 20px;
 }
 
-/* Section Title */
-#certifications h2 {
+/* Headings */
+h1, h2, h3 {
+  color: #111;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: linear-gradient(120deg, #6c63ff, #b49aff);
+  color: white;
+  border-radius: 16px;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* About Section */
+.about {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.about h2 {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.about p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Section Titles */
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-/* Grid Layout */
-.certification-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Slider Container */
+.slider-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-bottom: 40px;
+  padding: 10px 5px;
 }
 
-/* Card */
-.certification-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  overflow: hidden;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Slider Row */
+.card-slider {
   display: flex;
-  flex-direction: column;
+  gap: 16px;
+  padding: 5px 5px 20px;
+}
+
+/* Card Style */
+.certification-card {
+  flex: 0 0 auto;
+  width: 220px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .certification-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .certification-card img {
   width: 100%;
-  height: 150px;
+  height: 130px;
   object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
-/* Card Content */
 .cert-content {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  padding: 10px 12px;
 }
 
 .cert-provider {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #777;
 }
 
 .cert-content h3 {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 0.95rem;
+  margin: 4px 0;
+  color: #222;
 }
 
 .cert-type {
-  font-size: 0.8rem;
-  color: #0073e6;
+  font-size: 0.75rem;
+  color: #007bff;
 }
 
-/* Button */
-#showMore {
-  display: block;
-  margin: 2rem auto 0;
-  padding: 10px 20px;
+/* Contact Section */
+.contact {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 12px;
+  margin: 60px auto 20px;
+  max-width: 800px;
+}
+
+.contact h2 {
+  margin-bottom: 16px;
+}
+
+.contact p {
+  color: #444;
   font-size: 1rem;
-  background-color: #007bff;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s;
 }
 
-#showMore:hover {
-  background-color: #0056b3;
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  padding: 30px 10px;
 }
