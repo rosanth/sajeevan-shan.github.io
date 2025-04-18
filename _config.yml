@@ -1,4 +1,12 @@
 title: "Sajeevan Jeyakumar"
-logo: /assets/img/logo.png # Update with the correct path to your logo
-description: "ML Engineer"
+logo: "/assets/img/your-logo.png"
+description: "Machine Learning Engineer | AI Enthusiast | Developer"
 theme: jekyll-theme-minimal
+
+# Optional social links
+github_username: sajeevan-jeyakumar
+linkedin_username: sajeevan-jeyakumar
+email: sajeevan@example.com
+
+# Project settings
+show_downloads: false
