@@ -83,6 +83,94 @@ section h2 {
   padding: 5px 5px 20px;
 }
 
+/* Project Card Style */
+.project-card {
+  flex: 0 0 auto;
+  width: 420px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.project-content {
+  padding: 10px 12px;
+}
+
+.project-provider {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.project-content h3 {
+  font-size: 0.95rem;
+  margin: 4px 0;
+  color: #222;
+}
+
+.project-type {
+  font-size: 0.75rem;
+  color: #007bff;
+}
+
+.project-description {
+  font-size: 0.8rem;
+  color: #555;
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+.project-tech {
+  font-size: 0.75rem;
+  color: #444;
+  background-color: #f3f3f3;
+  padding: 4px 8px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.project-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  text-decoration: none;
+  font-size: 0.75rem;
+  color: #fff;
+  background-color: #007bff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: #0056b3;
+}
+
+.project-date {
+  font-size: 0.7rem;
+  color: #999;
+  margin-top: 6px;
+}
+
+
 /* Card Style */
 .certification-card {
   flex: 0 0 auto;
@@ -222,4 +310,91 @@ footer {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* === Education Timeline Styles === */
+.education {
+  text-align: center;
+  padding: 60px 20px;
+  
+}
+
+#eduSVG {
+  width: 100%;
+  max-width: 1000px;
+  height: 300px;
+  margin: auto;
+  display: block;
+}
+
+/* Main road path */
+#eduPathBackground {
+  fill: none;
+  stroke: #2c2c2c;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Dashed center line */
+#eduPath {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 20 15;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+/* Arrow */
+#eduArrow {
+  fill: #3498db;
+  stroke: white;
+  stroke-width: 3;
+}
+
+/* Milestone points */
+.edu-point {
+  cursor: pointer;
+  stroke: white;
+  stroke-width: 4;
+  transition: filter 0.3s ease;
+}
+
+.edu-point:hover {
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+
+
+.edu-popup {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-10px);
+  z-index: 100;
+  width: 160px;
+}
+
+.edu-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.edu-popup h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.edu-popup p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #555;
+}
+
 
