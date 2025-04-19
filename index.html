@@ -23,6 +23,34 @@
       I’m a passionate ML Engineer with hands-on experience in developing intelligent solutions. Skilled in Python, data science, and building models that power decision-making.
     </p>
   </section>
+	
+
+
+<!-- Education Section -->
+ <section class="education">
+  <h2>My Education Journey</h2>
+  <div class="edu-container">
+    <svg id="eduSVG" viewBox="0 0 1000 300">
+      <path id="eduPath" d="M 50 250 Q 300 50, 500 150 Q 700 250, 950 50" fill="none" stroke="#333" stroke-width="6" />
+      <circle id="eduArrow" r="10" fill="#007bff" />
+      <!-- Milestone Points -->
+      <circle class="edu-point" cx="100" cy="200" r="14" fill="#e74c3c" data-index="0" data-title="High School" data-detail="Graduated in 2016 with distinction"/>
+      <circle class="edu-point" cx="280" cy="100" r="14" fill="#f39c12" data-index="1" />
+      <circle class="edu-point" cx="500" cy="160" r="14" fill="#2ecc71" data-index="2" />
+      <circle class="edu-point" cx="720" cy="200" r="14" fill="#3498db" data-index="3" />
+      <circle class="edu-point" cx="920" cy="70" r="14" fill="#9b59b6" data-index="4" />
+    </svg>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
 
   <!-- Projects Section -->
   <section id="projects">
@@ -31,24 +59,31 @@
       <div class="card-slider">
 
         <!-- Project 1 -->
-        <div class="certification-card">
-          <img src="project1.jpg" alt="Project 1" />
-          <div class="cert-content">
-            <span class="cert-provider">Personal Project</span>
-            <h3>ML Dashboard</h3>
-            <span class="cert-type">Prediction + Recommender</span>
-          </div>
-        </div>
+        <div class="project-card">
+  		<img src="project1.jpg" alt="Project 1" />
+  	<div class="project-content">
+    		<span class="project-provider">Personal Project</span>
+    		<h3>ML Dashboard</h3>
+    		<span class="project-type">Prediction + Recommender</span>
+    		<p class="project-description">An interactive dashboard to visualize trends and make data-driven predictions for business KPIs.</p>
+    		<div class="project-tech">Python • Flask • scikit-learn • Chart.js</div>
+    		<div class="project-links">
+      		<a href="https://your-demo-link.com" target="_blank">🔗 Demo</a>
+      		<a href="https://github.com/your-repo" target="_blank">💻 Code</a>
+    		</div>
+  	  </div>
+	</div>
 
-        <!-- Project 2 -->
-        <div class="certification-card">
-          <img src="project2.jpg" alt="Project 2" />
-          <div class="cert-content">
-            <span class="cert-provider">Team Project</span>
-            <h3>Beauty Parlor App</h3>
-            <span class="cert-type">Scheduler + Bookkeeping</span>
+	<!-- Project 2 -->
+        <div class="project-card">
+          <img src="project2.jpg" alt="Project 1" />
+          <div class="project-content">
+            <span class="project-provider">Personal Project</span>
+            <h3>ML Dashboard</h3>
+            <span class="project-type">Prediction + Recommender</span>
           </div>
-        </div>
+        </div
+        
 
         <!-- Add more projects here -->
 
@@ -137,6 +172,123 @@
     if (e.target === modal) modal.style.display = "none";
   });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const path = document.getElementById("eduPath");
+  const arrow = document.getElementById("eduArrow");
+  const pathLength = path.getTotalLength();
+  const duration = 4000;
+
+  let progress = 0;
+  let animationStart = null;
+  let animationPaused = false;
+  let animatingToPoint = false;
+
+  function moveArrow(t) {
+    const point = path.getPointAtLength(pathLength * t);
+    arrow.setAttribute("cx", point.x);
+    arrow.setAttribute("cy", point.y);
+  }
+
+  function animateArrow(time) {
+    if (animationStart === null) animationStart = time;
+
+    if (!animationPaused && !animatingToPoint && progress < 1) {
+      const elapsed = time - animationStart;
+      progress = Math.min(elapsed / duration, 1);
+      moveArrow(progress);
+    }
+
+    requestAnimationFrame(animateArrow);
+  }
+
+  requestAnimationFrame(animateArrow);
+
+  function animateToProgress(from, to, duration = 600) {
+    animatingToPoint = true;
+    const startTime = performance.now();
+
+    function step(currentTime) {
+      const elapsed = currentTime - startTime;
+      const t = Math.min(elapsed / duration, 1);
+      const eased = easeInOutQuad(t);
+      const current = from + (to - from) * eased;
+
+      moveArrow(current);
+
+      if (t < 1) {
+        requestAnimationFrame(step);
+      } else {
+        animatingToPoint = false;
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+
+  const points = document.querySelectorAll(".edu-point");
+  const cards = document.querySelectorAll(".edu-card");
+
+  // Tooltip popup
+  const popup = document.createElement("div");
+  popup.classList.add("edu-popup");
+  document.body.appendChild(popup);
+
+  points.forEach(point => {
+    const index = +point.dataset.index;
+    const total = points.length;
+    const hoverProgress = index / (total - 1);
+
+    point.addEventListener("mouseenter", () => {
+      // Pause and animate to point
+      animationPaused = true;
+      animateToProgress(progress, hoverProgress);
+
+      // Show popup
+      const title = point.dataset.title;
+      const detail = point.dataset.detail;
+
+      popup.innerHTML = `<h4>${title}</h4><p>${detail}</p>`;
+      popup.classList.add("show");
+
+      const svgRect = point.getBoundingClientRect();
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+      popup.style.left = `${svgRect.left + svgRect.width / 2 - 80}px`;
+      popup.style.top = `${svgRect.top + scrollY - 60}px`;
+
+      // Show related card if available
+      cards.forEach(card => card.classList.remove("show"));
+      const card = document.querySelector(`.edu-card[data-card="${index}"]`);
+      if (card) card.classList.add("show");
+    });
+
+    point.addEventListener("mouseleave", () => {
+      const arrowX = parseFloat(arrow.getAttribute("cx"));
+      const pathWidth = path.getBBox().width;
+      const currentProgress = arrowX / pathWidth;
+
+      animateToProgress(currentProgress, progress);
+
+      popup.classList.remove("show");
+
+      animationPaused = false;
+      animationStart = performance.now() - progress * duration;
+    });
+  });
+});
+</script>
+
+
+
+
+
+
 
 
 </body>
