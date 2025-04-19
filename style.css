@@ -70,11 +70,17 @@ section h2 {
   scrollbar-width: none;
   margin-bottom: 40px;
   padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  
 }
 
 .slider-container::-webkit-scrollbar {
   display: none;
+	
 }
+
+
 
 /* Slider Row */
 .card-slider {
@@ -214,6 +220,20 @@ section h2 {
   font-size: 0.75rem;
   color: #007bff;
 }
+
+.cert-link {
+  text-decoration: none;
+  font-size: 0.75rem;
+  color: #007bff;
+}
+
+.cert-link:visited,
+.cert-link:hover,
+.cert-link:active {
+  color: #007bff;
+  text-decoration: none;
+}
+
 
 /* Contact section */
 #contact {
@@ -374,7 +394,7 @@ footer {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
   transform: translateY(-10px);
   z-index: 100;
   width: 160px;
@@ -397,4 +417,157 @@ footer {
   color: #555;
 }
 
+.certification-card img {
+  width: 100%;
+  height: auto; /* Let it resize naturally */
+  object-fit: contain; /* Or try 'cover' based on visual goal */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
 
+.project-card img {
+  width: 100%;
+  height: auto; /* Let it resize naturally */
+  object-fit: contain; /* Or try 'cover' based on visual goal */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+/* Hero Section */
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 8%;
+  background: #f9f9f9;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.intro-text {
+  flex: 1 1 500px;
+  max-width: 600px;
+  animation: fadeInLeft 1s ease-out;
+}
+
+.intro-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: #222;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Cursor blink animation */
+.cursor {
+  display: inline-block;
+  background-color: #333;
+  width: 2px;
+  margin-left: 2px;
+  animation: blink 0.7s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-light {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 2px solid #ddd;
+}
+
+.btn-light:hover {
+  background-color: #e2e2e2;
+}
+
+.btn-dark {
+  background-color: #3b3a58;
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+.btn-dark:hover {
+  background-color: #2e2d4b;
+}
+
+/* Image */
+.intro-img {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInRight 1s ease-out;
+}
+
+.intro-img img {
+  max-width: 100%;
+  width: 400px;
+  height: auto;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .intro-img img {
+    width: 300px;
+    margin-bottom: 2rem;
+  }
+
+  .intro-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .intro-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
