@@ -10,11 +10,21 @@
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Sajeevan Jeyakumar</h1>
-    <p>Machine Learning Engineer</p>
-  </section>
+  <section id="hero">
+  <div class="intro-text">
+    <h1>Hey folks,</h1>
+    <h2>I am <span class="typed-text"></span><span class="cursor">|</span></h2>
+    <p>Building smart solutions with machine learning, development, and a creative touch.</p>
+    <div class="buttons">
+      <a href="resume.pdf" class="btn btn-light">Download Resume</a>
+      <a href="#contact" class="btn btn-dark">Get a free quote</a>
+    </div>
+  </div>
+  <div class="intro-img">
+    <img src="Sajeevan.png" alt="Illustration" />
+  </div>
+</section>
+
 
   <!-- About Section -->
   <section class="about">
@@ -34,11 +44,11 @@
       <path id="eduPath" d="M 50 250 Q 300 50, 500 150 Q 700 250, 950 50" fill="none" stroke="#333" stroke-width="6" />
       <circle id="eduArrow" r="10" fill="#007bff" />
       <!-- Milestone Points -->
-      <circle class="edu-point" cx="100" cy="200" r="14" fill="#e74c3c" data-index="0" data-title="High School" data-detail="Graduated in 2016 with distinction"/>
-      <circle class="edu-point" cx="280" cy="100" r="14" fill="#f39c12" data-index="1" />
-      <circle class="edu-point" cx="500" cy="160" r="14" fill="#2ecc71" data-index="2" />
-      <circle class="edu-point" cx="720" cy="200" r="14" fill="#3498db" data-index="3" />
-      <circle class="edu-point" cx="920" cy="70" r="14" fill="#9b59b6" data-index="4" />
+      <circle class="edu-point" cx="100" cy="250" r="14" fill="#e74c3c" data-index="0" data-title="BT/Chenkalady Central College" data-detail="Ordinary Level [2013]"/>
+      <circle class="edu-point" cx="280" cy="100" r="14" fill="#f39c12" data-index="1" data-title="BT/Chenkalady Central College" data-detail="Advanced Level [2016]"/>
+      <circle class="edu-point" cx="500" cy="180" r="14" fill="#2ecc71" data-index="2" data-title="Actiive Tech Network" data-detail="Cisco Certified Network Associate [2021]"/>
+      <circle class="edu-point" cx="720" cy="140" r="14" fill="#3498db" data-index="3" data-title="Wayamba University of Sri Lanka" data-detail="Higher Diploma in Software Engineering" />
+      <circle class="edu-point" cx="940" cy="100" r="14" fill="#9b59b6" data-index="4" />
     </svg>
   </div>
 
@@ -60,13 +70,13 @@
 
         <!-- Project 1 -->
         <div class="project-card">
-  		<img src="project1.jpg" alt="Project 1" />
+  		<img src="rsm.png" alt="Project 1" />
   	<div class="project-content">
-    		<span class="project-provider">Personal Project</span>
-    		<h3>ML Dashboard</h3>
+    		<span class="project-provider">BERT-Based Resume Matching System</span>
+    		<h3>Resume Matcher</h3>
     		<span class="project-type">Prediction + Recommender</span>
-    		<p class="project-description">An interactive dashboard to visualize trends and make data-driven predictions for business KPIs.</p>
-    		<div class="project-tech">Python • Flask • scikit-learn • Chart.js</div>
+    		<p class="project-description">Web-based resume matcher using BERT embeddings, Flask backend, PDF parsing, cosine similarity, deployed via Ngrok for real-time access</p>
+    		<div class="project-tech">Python • Flask • NLP • Ngrok • PyMuPDF</div>
     		<div class="project-links">
       		<a href="https://your-demo-link.com" target="_blank">🔗 Demo</a>
       		<a href="https://github.com/your-repo" target="_blank">💻 Code</a>
@@ -103,7 +113,8 @@
           <div class="cert-content">
             <span class="cert-provider">University of Michigan</span>
             <h3>Programming for everybody</h3>
-            <a href="https://www.coursera.org/account/accomplishments/records/9NWR63WUL6QV" target="_blank" class="class="cert-link"">Show credintial</a>
+            <a href="https://www.coursera.org/account/accomplishments/records/9NWR63WUL6QV" target="_blank" class="cert-link">Show credential</a>
+
           </div>
         </div>
          <!-- Card 2 -->
@@ -111,8 +122,8 @@
           <img src="cert2.jpg" alt="Python Data Structures" />
           <div class="cert-content">
             <span class="cert-provider">University of Michigan</span>
-            <h3>Machine Learning</h3>
-            <span class="cert-type">Specialization</span>
+            <h3>Python Data Structures</h3>
+            <a href="https://www.coursera.org/account/accomplishments/records/9NWR63WUL6QV" target="_blank" class="cert-link">Show credential</a>
           </div>
         </div>
         <!-- Card 3 -->
@@ -120,8 +131,8 @@
           <img src="Python Web Access_page-0001.jpg" alt="Python Web Access" />
           <div class="cert-content">
             <span class="cert-provider">University of Michigan</span>
-            <h3>Machine Learning</h3>
-            <span class="cert-type">Specialization</span>
+            <h3>Python Web Access</h3>
+            <a href="https://www.coursera.org/account/accomplishments/records/9NWR63WUL6QV" target="_blank" class="cert-link">Show credential</a>
           </div>
         </div>
         <!-- Add more certifications like before -->
@@ -152,7 +163,156 @@
   <img class="modal-content" id="modalImg" />
 </div>
 
+
+
+
   <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const path = document.getElementById("eduPath");
+  const arrow = document.getElementById("eduArrow");
+  const pathLength = path.getTotalLength();
+  const duration = 15000;
+
+  let progress = 0;
+  let animationStart = null;
+  let animationPaused = false;
+  let animatingToPoint = false;
+  let currentActiveIndex = null;
+  let isHovering = false;
+  let hoverTarget = null;
+
+  const points = document.querySelectorAll(".edu-point");
+
+  const pointProgressList = Array.from(points).map((point, i, arr) => ({
+    element: point,
+    index: i,
+    progress: i / (arr.length - 1),
+    title: point.dataset.title,
+    detail: point.dataset.detail
+  }));
+
+  const popup = document.createElement("div");
+  popup.classList.add("edu-popup");
+  document.body.appendChild(popup);
+
+  function moveArrow(t) {
+    const point = path.getPointAtLength(pathLength * t);
+    arrow.setAttribute("cx", point.x);
+    arrow.setAttribute("cy", point.y);
+  }
+
+  function showPopup({ title, detail, element }) {
+    const rect = element.getBoundingClientRect();
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+    popup.innerHTML = `<h4>${title}</h4><p>${detail}</p>`;
+    popup.style.left = `${rect.left + rect.width / 2 - 80}px`;
+    popup.style.top = `${rect.top + scrollY - 60}px`;
+    popup.classList.add("show");
+  }
+
+  function hidePopup() {
+    if (!isHovering) {
+      popup.classList.remove("show");
+    }
+  }
+
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+
+  function animateToProgress(from, to, duration = 600, onComplete = () => {}) {
+    animatingToPoint = true;
+    const start = performance.now();
+
+    function step(currentTime) {
+      const elapsed = currentTime - start;
+      const t = Math.min(elapsed / duration, 1);
+      const eased = easeInOutQuad(t);
+      const current = from + (to - from) * eased;
+
+      moveArrow(current);
+
+      if (t < 1) {
+        requestAnimationFrame(step);
+      } else {
+        animatingToPoint = false;
+        onComplete();
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function animateArrow(time) {
+    if (animationStart === null) animationStart = time;
+
+    if (!animationPaused && !animatingToPoint && progress < 1) {
+      const elapsed = time - animationStart;
+      const stopAtIndex = 3; // your current point index (0-based)
+	const stopProgress = stopAtIndex / (pointProgressList.length - 1);
+	progress = Math.min(elapsed / duration, stopProgress);
+
+      moveArrow(progress);
+
+      pointProgressList.forEach(({ progress: p, ...info }) => {
+        if (!isHovering && Math.abs(progress - p) < 0.015) {
+          if (currentActiveIndex !== info.index) {
+            currentActiveIndex = info.index;
+            showPopup(info);
+          }
+        } else if (!isHovering && currentActiveIndex === info.index && Math.abs(progress - p) >= 0.02) {
+          currentActiveIndex = null;
+          hidePopup();
+        }
+      });
+    }
+
+    requestAnimationFrame(animateArrow);
+  }
+
+  requestAnimationFrame(animateArrow);
+
+  // Hover interaction to pause + move arrow
+  pointProgressList.forEach(info => {
+    const point = info.element;
+    const targetProgress = info.progress;
+
+    point.addEventListener("mouseenter", () => {
+      isHovering = true;
+      animationPaused = true;
+      hoverTarget = targetProgress;
+
+      animateToProgress(progress, targetProgress, 500);
+      showPopup(info);
+    });
+
+    point.addEventListener("mouseleave", () => {
+      isHovering = false;
+
+      // Resume arrow animation from where it was paused
+      const arrowX = parseFloat(arrow.getAttribute("cx"));
+      const currentProgress = arrowX / path.getBBox().width;
+      progress = currentProgress;
+
+      animateToProgress(currentProgress, progress, 500, () => {
+        animationPaused = false;
+        animationStart = performance.now() - (progress * duration);
+      });
+
+      // Hide popup if arrow is not close to this point
+      if (Math.abs(progress - targetProgress) > 0.02) {
+        hidePopup();
+      }
+    });
+  });
+});
+</script>
+
+
+
+
+<script>
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImg");
   const closeBtn = document.querySelector(".close");
@@ -174,121 +334,76 @@
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const path = document.getElementById("eduPath");
-  const arrow = document.getElementById("eduArrow");
-  const pathLength = path.getTotalLength();
-  const duration = 4000;
+const slider = document.querySelector('.card-slider');
 
-  let progress = 0;
-  let animationStart = null;
-  let animationPaused = false;
-  let animatingToPoint = false;
+let isDown = false;
+let startX;
+let scrollLeft;
 
-  function moveArrow(t) {
-    const point = path.getPointAtLength(pathLength * t);
-    arrow.setAttribute("cx", point.x);
-    arrow.setAttribute("cy", point.y);
-  }
-
-  function animateArrow(time) {
-    if (animationStart === null) animationStart = time;
-
-    if (!animationPaused && !animatingToPoint && progress < 1) {
-      const elapsed = time - animationStart;
-      progress = Math.min(elapsed / duration, 1);
-      moveArrow(progress);
-    }
-
-    requestAnimationFrame(animateArrow);
-  }
-
-  requestAnimationFrame(animateArrow);
-
-  function animateToProgress(from, to, duration = 600) {
-    animatingToPoint = true;
-    const startTime = performance.now();
-
-    function step(currentTime) {
-      const elapsed = currentTime - startTime;
-      const t = Math.min(elapsed / duration, 1);
-      const eased = easeInOutQuad(t);
-      const current = from + (to - from) * eased;
-
-      moveArrow(current);
-
-      if (t < 1) {
-        requestAnimationFrame(step);
-      } else {
-        animatingToPoint = false;
-      }
-    }
-
-    requestAnimationFrame(step);
-  }
-
-  function easeInOutQuad(t) {
-    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-  }
-
-  const points = document.querySelectorAll(".edu-point");
-  const cards = document.querySelectorAll(".edu-card");
-
-  // Tooltip popup
-  const popup = document.createElement("div");
-  popup.classList.add("edu-popup");
-  document.body.appendChild(popup);
-
-  points.forEach(point => {
-    const index = +point.dataset.index;
-    const total = points.length;
-    const hoverProgress = index / (total - 1);
-
-    point.addEventListener("mouseenter", () => {
-      // Pause and animate to point
-      animationPaused = true;
-      animateToProgress(progress, hoverProgress);
-
-      // Show popup
-      const title = point.dataset.title;
-      const detail = point.dataset.detail;
-
-      popup.innerHTML = `<h4>${title}</h4><p>${detail}</p>`;
-      popup.classList.add("show");
-
-      const svgRect = point.getBoundingClientRect();
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-
-      popup.style.left = `${svgRect.left + svgRect.width / 2 - 80}px`;
-      popup.style.top = `${svgRect.top + scrollY - 60}px`;
-
-      // Show related card if available
-      cards.forEach(card => card.classList.remove("show"));
-      const card = document.querySelector(`.edu-card[data-card="${index}"]`);
-      if (card) card.classList.add("show");
-    });
-
-    point.addEventListener("mouseleave", () => {
-      const arrowX = parseFloat(arrow.getAttribute("cx"));
-      const pathWidth = path.getBBox().width;
-      const currentProgress = arrowX / pathWidth;
-
-      animateToProgress(currentProgress, progress);
-
-      popup.classList.remove("show");
-
-      animationPaused = false;
-      animationStart = performance.now() - progress * duration;
-    });
-  });
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
 });
+
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+
+slider.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 1.5; // scroll speed
+  slider.scrollLeft = scrollLeft - walk;
+});
+
 </script>
 
+<script>
+  const typedTextSpan = document.querySelector(".typed-text");
+  const cursorSpan = document.querySelector(".cursor");
 
+  const textArray = ["Sajeevan", "an ML Engineer", "a Developer", "a Tech Enthusiast", "a Problem Solver"];
+  const typingDelay = 100;
+  const erasingDelay = 60;
+  const newTextDelay = 1500; // Delay between current and next text
+  let textArrayIndex = 0;
+  let charIndex = 0;
 
+  function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+      typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    } else {
+      setTimeout(erase, newTextDelay);
+    }
+  }
 
+  function erase() {
+    if (charIndex > 0) {
+      typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, erasingDelay);
+    } else {
+      textArrayIndex++;
+      if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+      setTimeout(type, typingDelay + 200);
+    }
+  }
 
-
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(type, 500);
+  });
+</script>
 
 
 </body>
