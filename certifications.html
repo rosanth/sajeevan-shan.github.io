@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sajeevan Jeyakumar | Portfolio</title>
+  <link rel="stylesheet" href="certifications_only.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+</head>
+<body>
+<header class="navbar">
+  <div class="navbar-container">
+    <div class="logo-section">
+      <img src="your-logo.png" alt="Logo" class="logo" />
+      
+    </div>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="education.html" class="nav-link">Education</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="certifications.html" class="nav-link active">Certifications</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    
+  </div>
+</header>
+
+
+
+
+
+
+ <!-- Certifications Section -->
+
+<!-- Swiper -->
+<div class="swiper certification-swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="certification-card">
+        <img src="cert1.jpg" alt="Programming for everybody" />
+        <div class="cert-content">
+          <span class="cert-provider">University of Michigan</span>
+          <h3>Programming for everybody</h3>
+          <a href="https://www.coursera.org/account/accomplishments/records/9NWR63WUL6QV" target="_blank" class="cert-link">Show credential</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="certification-card">
+        <img src="cert2.jpg" alt="Python Data Structures" />
+        <div class="cert-content">
+          <span class="cert-provider">University of Michigan</span>
+          <h3>Python Data Structures</h3>
+          <a href="https://www.coursera.org/account/accomplishments/records/9NWR63WUL6QV" target="_blank" class="cert-link">Show credential</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="certification-card">
+        <img src="cert2.jpg" alt="Python Data Structures" />
+        <div class="cert-content">
+          <span class="cert-provider">University of Michigan</span>
+          <h3>Python Data Structures</h3>
+          <a href="https://www.coursera.org/account/accomplishments/records/9NWR63WUL6QV" target="_blank" class="cert-link">Show credential</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="certification-card">
+        <img src="cert2.jpg" alt="Python Data Structures" />
+        <div class="cert-content">
+          <span class="cert-provider">University of Michigan</span>
+          <h3>Python Data Structures</h3>
+          <a href="https://www.coursera.org/account/accomplishments/records/9NWR63WUL6QV" target="_blank" class="cert-link">Show credential</a>
+        </div>
+      </div>
+    </div>
+
+   <div class="swiper-slide">
+      <div class="certification-card">
+        <img src="cert2.jpg" alt="Python Data Structures" />
+        <div class="cert-content">
+          <span class="cert-provider">University of Michigan</span>
+          <h3>Python Data Structures</h3>
+          <a href="https://www.coursera.org/account/accomplishments/records/9NWR63WUL6QV" target="_blank" class="cert-link">Show credential</a>
+        </div>
+      </div>
+    </div>
+    <!-- Add more .swiper-slide blocks -->
+  </div>
+
+  <!-- Arrows and Pagination (optional) -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+  
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg" />
+</div>
+
+<footer>
+  <p>&copy; 2025 Sajeevan Jeyakumar. All rights reserved.</p>
+</footer>
+
+
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".certification-card img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+</script>
+
+<script>
+  const swiper = new Swiper(".certification-swiper", {
+  loop: false, // Important: avoid looping to prevent wrong dot count
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true
+  },
+  slidesPerView: "auto", // Use 'auto' or a number like 3 for fixed layout
+  spaceBetween: 30,
+});
+
+</script>
+
+
+</body>
+</html>

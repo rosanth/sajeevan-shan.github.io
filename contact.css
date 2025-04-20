@@ -1,0 +1,186 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #111;
+}
+
+
+
+
+/* Contact section */
+#contact {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 12px;
+  margin: 60px auto 20px;
+  max-width: 800px;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+#contact p {
+  font-size: 1.1rem;
+}
+
+#contact a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0077b6;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+#contact a:hover {
+  color: #023e8a;
+}
+
+#contact a:visited {
+  color: #0077b6; /* No color change after visit */
+}
+
+#contact i {
+  margin-right: 6px;
+}
+
+/*--------------------------------------------------------------------------------Menu Bar -------------------------------------------------------------------*/
+
+nav a,
+nav button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  border: none;
+  background-color: transparent;
+  color: #007bff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+nav a:hover,
+nav button:hover {
+  background-color: #007bff;
+  color: white;
+}
+/* Menu button (top-left hamburger) */
+.menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  margin: 1rem;
+  cursor: pointer;
+  z-index: 101;
+}
+
+/* Navbar Styles */
+.navbar {
+  background: black;
+  border-radius: 40px;
+  margin: 20px auto;
+  max-width: 1200px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 80px; /* ✅ FIXED HEIGHT */
+  box-sizing: border-box; /* Ensures padding is included in height */
+}
+
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.brand span {
+  font-size: 12px;
+  color: gray;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link.active {
+  color: #4a3aff;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+}
+
+.cta-button {
+  background: linear-gradient(to right, #42d392, #647eff);
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ----------------------------------------------------------Footer------------------------------------------------------- */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #555;
+  padding: 10px 0;
+  background: #f4f6f8; /* Optional for readability */
+  z-index: 100;
+}
