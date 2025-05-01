@@ -181,7 +181,7 @@ h1, h2, h3 {
   }
 }
 
-/*--------------------------------------------------------------------------------Menu Bar -------------------------------------------------------------------*/
+/*--------------------------------------------- Menu Bar (Responsive) ---------------------------------------------*/
 
 nav a,
 nav button {
@@ -202,15 +202,6 @@ nav button:hover {
   background-color: white;
   color: black;
 }
-/* Menu button (top-left hamburger) */
-.menu-btn {
-  font-size: 24px;
-  background: none;
-  border: none;
-  margin: 1rem;
-  cursor: pointer;
-  z-index: 101;
-}
 
 /* Navbar Styles */
 .navbar {
@@ -223,11 +214,9 @@ nav button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  height: 80px; /* ✅ FIXED HEIGHT */
-  box-sizing: border-box; /* Ensures padding is included in height */
+  height: 80px;
+  box-sizing: border-box;
 }
-
 
 .navbar-container {
   display: flex;
@@ -263,6 +252,7 @@ nav button:hover {
   gap: 25px;
   flex-grow: 1;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .nav-link {
@@ -290,6 +280,53 @@ nav button:hover {
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+/* ---------------------- Mobile Responsive Fix ---------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 15px;
+    border-radius: 20px;
+  }
+
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #1e1e1e;
+    color: white;
+    text-align: left;
+    border-radius: 10px;
+  }
+
+  .nav-link:hover {
+    background-color: #333;
+  }
+
+  .cta {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
 
 /* ----------------------------------------------------------Footer------------------------------------------------------- */
 footer {
